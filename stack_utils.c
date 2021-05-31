@@ -19,7 +19,7 @@ void push(struct stack_node** node, int data)
     struct stack_node* stack_node = new_node(data);
     stack_node->next = *node;
     *node = stack_node;
-    printf("%d pushed to stack\n", data);
+  //  printf("%d pushed to stack\n", data);
 }
 
 int pop(struct stack_node** node)
@@ -38,11 +38,30 @@ int peek(struct stack_node* node)
         return INT_MIN;
         return node->data;
 }
+int stack_size(struct stack_node* node)
+{   
+    int i;
+
+    i  = 0;
+    struct stack_node *ptr;
+    ptr = node;
+    if(ptr == NULL)
+        return (0);
+    else
+    {
+        while(ptr != NULL)
+        {
+            i++;
+            ptr = ptr->next;
+        }
+        return i;
+    }
+}
 
 void print_stack(struct stack_node* node)
 {
-    int i;
-    struct stack_node*ptr;
+    //int i;
+    struct stack_node *ptr;
     ptr = node;
     if(ptr == NULL)
         printf("stack is empty\n");
@@ -50,7 +69,7 @@ void print_stack(struct stack_node* node)
     {
         while(ptr != NULL)
         {
-            printf("%d\n", ptr ->data);
+            printf("%d:  ", ptr ->data);
             ptr = ptr ->next;
         }
     }
