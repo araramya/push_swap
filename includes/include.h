@@ -3,7 +3,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <limits.h>
+# include "../libft/libft.h"
 
 typedef struct s_node
 {
@@ -34,5 +34,8 @@ void rr(t_node **a, t_node **b);
 void rra(t_node **a);//action 4
 void rrb(t_node **b);
 void rrr(t_node **a, t_node **b);
+
+//solution
+void sort3(t_node **a);
 
 #endif

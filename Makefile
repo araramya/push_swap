@@ -1,6 +1,6 @@
 NAME = pushswap.a
 LIBFT = ./libft/libft.a
-SRCS = $(shell find -name '*.c') pushswap.a
+SRCS = $(shell find "./sources" -name '*.c') push_swap.c
 OBJS = ${SRCS:.c=.o}
 CC = gcc
 RM = rm -f

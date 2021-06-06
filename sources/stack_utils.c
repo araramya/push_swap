@@ -1,4 +1,4 @@
-#include "include.h"
+#include "../includes/include.h"
 
 t_node *new_node(int info)
 {
@@ -101,7 +101,7 @@ void print_stack(t_node *node)
     {
         while(ptr != NULL)
         {
-            printf("%d:  ", ptr ->data);
+            printf("%d,   ", ptr ->data);
             ptr = ptr ->next;
         }
     }
