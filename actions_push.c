@@ -1,15 +1,15 @@
-#include "includes.h"
-void pa(struct stack_node **a, struct stack_node **b )
+#include "include.h"
+void pa(t_node **a, t_node **b )
 {
-    if(isEmpty(*b))
+    if(is_empty(*b))
         return;
     else
         push(a, pop(b));
 }
 
-void pb(struct stack_node **a, struct stack_node **b)
+void pb(t_node **a, t_node **b)
 {
-    if(isEmpty(*a))
+    if(is_empty(*a))
             return;
     else
         push(b, pop(a));  

@@ -1,6 +1,6 @@
-#include "includes.h"
+#include "include.h"
 
-void sa(struct stack_node *a)
+void sa(t_node *a)
 {
     int temp;
     if(stack_size(a) <= 1)
@@ -10,7 +10,7 @@ void sa(struct stack_node *a)
     a->next->data = temp;
 }
 
-void sb(struct stack_node *b)
+void sb(t_node *b)
 {
     int temp;
     if(stack_size(b) <= 1)
@@ -20,7 +20,7 @@ void sb(struct stack_node *b)
     b->next->data = temp;
 }
 
-void ss(struct stack_node *a, struct stack_node *b)
+void ss(t_node *a, t_node *b)
 {
     sa(a);
     sb(b);

@@ -1,73 +1,69 @@
-#include "includes.h"
+#include "include.h"
 
-struct stack_node* new_node(int data)
+t_node *new_node(int info)
 {
-    struct stack_node* stack_node =
-    (struct stack_node*)malloc(sizeof(struct stack_node));
-    stack_node->data = data;
-    stack_node->next = NULL;
+    t_node *stack_node = (t_node*)malloc(sizeof(t_node));
+    stack_node -> data = info;
+    stack_node -> next = NULL;
     return stack_node;
 }
 
-int isEmpty(struct stack_node* node)
+int is_empty(t_node *node)
 {
     return (!node);
 }
 
-void push(struct stack_node** node, int data)
+void push(t_node **node, int info)
 {
-    struct stack_node* stack_node = new_node(data);
-    stack_node->next = *node;
+    t_node *stack_node = new_node(info);
+    stack_node -> next = *node;
     *node = stack_node;
-  //  printf("%d pushed to stack\n", data);
 }
 
-void push_end(struct stack_node **node, int info)
+void push_end(t_node **node, int info)
 {
-    struct stack_node* n_node = new_node(info);
-
+    t_node* n_node = new_node(info);
     if(*node == NULL)
         *node = n_node;
     else 
     {
-        struct stack_node *lastNode = *node;
-        while(lastNode->next != NULL)
-            lastNode = lastNode->next;
-        lastNode ->next = n_node;
+        t_node *last_node = *node;
+        while(last_node->next != NULL)
+            last_node = last_node->next;
+        last_node->next = n_node;
     }
-
 }
 
-int pop(struct stack_node** node)
+int pop(t_node **node)
 {
     int popped;
-    if(isEmpty(*node))
-        return INT_MIN;
-    struct stack_node* temp = *node;
+    if(is_empty(*node))
+        return 0 ;
+    t_node* temp = *node;
     *node = (*node)->next;
      popped = temp->data;
     free(temp);
     return popped;
 }
-int peek(struct stack_node* node)
+int peek(t_node* node)
 {
-    if(isEmpty(node))
-        return INT_MIN;
-        return node->data;
+    if(is_empty(node))
+        return 0;
+    return node->data;
 }
 
-int pop_end(struct stack_node** node)
+int pop_end(t_node** node)
 {
     int popped;
     if(*node == NULL)
-        return INT_MIN;
+        return 0;
     if((*node)->next == NULL)
     {
         free(node);
-        return INT_MIN;
+        return 0;
     }
     //find the secon lasd node
-    struct stack_node *second_last = *node;
+    t_node *second_last = *node;
     while(second_last->next->next != NULL)
         second_last = second_last->next;
     popped = second_last->next->data;
@@ -75,12 +71,12 @@ int pop_end(struct stack_node** node)
     second_last -> next = NULL;
     return (popped);
 }
-int stack_size(struct stack_node* node)
+int stack_size(t_node* node)
 {   
     int i;
 
     i  = 0;
-    struct stack_node *ptr;
+    t_node *ptr;
     ptr = node;
     if(ptr == NULL)
         return (0);
@@ -95,10 +91,9 @@ int stack_size(struct stack_node* node)
     }
 }
 
-void print_stack(struct stack_node* node)
+void print_stack(t_node *node)
 {
-    //int i;
-    struct stack_node *ptr;
+    t_node *ptr;
     ptr = node;
     if(ptr == NULL)
         printf("stack is empty\n");
@@ -110,5 +105,4 @@ void print_stack(struct stack_node* node)
             ptr = ptr ->next;
         }
     }
-
 }

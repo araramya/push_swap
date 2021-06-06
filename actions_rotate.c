@@ -1,20 +1,20 @@
-#include "includes.h"
+#include "include.h"
 
-void ra(struct stack_node **a)
+void ra(t_node **a)
 {
     int temp;
     temp = pop(a);
     push_end(a, temp);
 }
 
-void rb(struct stack_node **b)
+void rb(t_node **b)
 {
     int temp;
     temp = pop(b);
     push_end(b,temp);
 }
 
-void rr(struct stack_node **a, struct stack_node **b)
+void rr(t_node **a, t_node **b)
 {
     ra(a);
     rb(b);
