@@ -17,6 +17,8 @@ int main(int argc, char **argv)
 
     if(argc == 4)
          sort3(&a);
+    else if(argc == 3)
+        sort2(&a);
 
     print_stack(a); printf("\n"); print_stack(b); printf("\n\n");
 

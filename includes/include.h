@@ -37,5 +37,6 @@ void rrr(t_node **a, t_node **b);
 
 //solution
 void sort3(t_node **a);
+void sort2(t_node **a);
 
 #endif
