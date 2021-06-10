@@ -6,6 +6,7 @@ void pa(t_node **a, t_node **b )
     else
     {
         push(a, pop(b));
+        count++;
         write(1, "pa\n", 3);
     }
 }
@@ -17,6 +18,7 @@ void pb(t_node **a, t_node **b)
     else
     {
         push(b, pop(a));
+        count++;
         write(1, "pb\n", 3); 
     } 
 }

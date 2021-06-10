@@ -5,11 +5,13 @@
 #include <stdio.h>
 # include "../libft/libft.h"
 
+ int count;
 typedef struct s_node
 {
     int data;
     struct s_node *next;
 }   t_node;
+
 
 //stack basic functions
 t_node *new_node(int data);
@@ -20,6 +22,10 @@ int pop(t_node **stack);
 int pop_end(t_node **stack);
 int stack_size(t_node *stack);
 void print_stack(t_node *node);
+int getelem(t_node *node, int n);
+int stack_check(t_node *node);
+int stack_min(t_node *node);
+int getelemindex(t_node *node, int num);
 
 
 // actions
@@ -36,7 +42,11 @@ void rrb(t_node **b);
 void rrr(t_node **a, t_node **b);
 
 //solution
-void sort3(t_node **a);
+void choose_sort(t_node **a, t_node **b, int argc);
 void sort2(t_node **a);
+void sort3(t_node **a);
+void sort4(t_node **a, t_node **b);
+void sort5(t_node **a, t_node **b);
+
 
 #endif

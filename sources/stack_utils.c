@@ -90,7 +90,68 @@ int stack_size(t_node* node)
         return i;
     }
 }
+int getelem(t_node *node, int n)
+{
+     t_node *ptr;
+     ptr = node;
+     int count = 0;
+     while(ptr != NULL)
+     {
+         if(count == n)
+            return (ptr->data);
+            count++;
+            ptr = ptr->next;
+     }
+     return (0);
+}
+int getelemindex(t_node *node, int num)
+{
+    t_node *ptr;
+    ptr = node;
+    int index = 0;
+    while(ptr != NULL)
+    {
+        if(num == ptr->data)
+            return index;
+        ptr = ptr->next;
+        index++;
+    }
+    return -1;
+}
 
+int stack_check(t_node *node)
+{
+    t_node *ptr;
+    ptr = node;
+    while(ptr->next != NULL)
+    {
+       
+        if(ptr->data > ptr->next->data)
+        {
+           
+            return 0;
+        }
+       
+        ptr = ptr->next;
+    }
+  
+    return 1;
+}
+int stack_min(t_node *node)
+{
+    t_node *ptr;
+    int min;
+    ptr = node;
+    min = ptr->data;
+    
+    while(ptr != NULL)
+    {
+        if(min  > ptr->data)
+            min = ptr->data;
+        ptr = ptr->next;
+    }
+    return (min);
+}
 void print_stack(t_node *node)
 {
     t_node *ptr;
