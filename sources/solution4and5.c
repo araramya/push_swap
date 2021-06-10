@@ -41,34 +41,45 @@
 //         return ;
 // }
 
-void min_to_top(t_node **a)
-{
-    int min = stack_min(*a);
-        int index = getelemindex(*a, min);
-        if(index <= 2)
-        {
-            while(index-- > 0)
-                ra(a);
-        }
-        else if(index >= 3)
-        {
-            if(stack_size(*a) == 4)
-                rra(a);
-            else
-            {            
-            while(index++ <= 4)
-                rra(a);
-            }
-        }
-} 
+// void min_to_top(t_node **a)
+// {
+//     int min = stack_min(*a);
+//     int index = getelemindex(*a, min);
+//     if(index < stack_size(*a)/2)
+//     {
+//         while(index-- != 0)
+//         ra(a);
+//     }
+//     else
+//     {
+//         while(index++ != stack_size(*a))
+//         rra(a);
+//     }
+    
+//         // if(index <= 2)
+//         // {
+//         //     while(index-- > 0)
+//         //         ra(a);
+//         // }
+//         // else if(index >= 3)
+//         // {
+//         //     if(stack_size(*a) == 4)
+//         //         rra(a);
+//         //     else
+//         //     {            
+//         //     while(index++ <= 4)
+//         //         rra(a);
+//         //     }
+//         // }
+// } 
 void sort5(t_node **a, t_node **b)
 {
    if(!stack_check(*a))
     {
         min_to_top(a);// print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
-        pb(a,b);// print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
+        pb(a,b); //print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
         min_to_top(a); //print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
-        pb(a,b);// print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
+        pb(a,b); //print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
         sort3(a);//print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
         pa(a,b);//print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
        // sort4(a);

@@ -152,6 +152,39 @@ int stack_min(t_node *node)
     }
     return (min);
 }
+
+void min_to_top(t_node **a)
+{
+    int min = stack_min(*a);
+    int index = getelemindex(*a, min);
+    if(index < stack_size(*a)/2)
+    {
+        while(index-- != 0)
+        ra(a);
+    }
+    else
+    {
+        while(index++ != stack_size(*a))
+        rra(a);
+    }
+    
+        // if(index <= 2)
+        // {
+        //     while(index-- > 0)
+        //         ra(a);
+        // }
+        // else if(index >= 3)
+        // {
+        //     if(stack_size(*a) == 4)
+        //         rra(a);
+        //     else
+        //     {            
+        //     while(index++ <= 4)
+        //         rra(a);
+        //     }
+        // }
+} 
+
 void print_stack(t_node *node)
 {
     t_node *ptr;
