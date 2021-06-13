@@ -14,7 +14,7 @@ $(NAME) : ${OBJS}
 		$(MAKE) -C ./libft
 		cp $(LIBFT) ${NAME}
 		${AR} ${NAME} ${OBJS}
-		gcc $(NAME) && ./a.out 4 3 2 1 0
+		gcc $(NAME) && ./a.out 24 56 7936 -7  59 150 796
 
 all : ${NAME}
 

@@ -48,6 +48,7 @@ void sort2(t_node **a);
 void sort3(t_node **a);
 void sort4(t_node **a, t_node **b);
 void sort5(t_node **a, t_node **b);
+void big_sorting(t_node **a, t_node **b, int argc);
 
 
 #endif
