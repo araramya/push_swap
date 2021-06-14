@@ -22,6 +22,7 @@ int main(int argc, char **argv)
 
     printf("\n");
     printf("THE COUNT OF ACTIONS IS :: %d\n", count);
-  //  print_stack(a); printf("\n"); print_stack(b); printf("\n\n");
+    //printf("%d", getelem(a, argc - 2 ));
+    print_stack(a); printf("\n"); print_stack(b); printf("\n\n");
 
 }

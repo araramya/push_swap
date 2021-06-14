@@ -34,6 +34,7 @@ void push_end(t_node **node, int info)
     }
 }
 
+
 int pop(t_node **node)
 {
     int popped;
