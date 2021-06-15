@@ -100,10 +100,8 @@ int getelem(t_node *node, int n)
      {
          if(count == n)
             return (ptr->data);
-          else
-          {  count++;
+            count++;
             ptr = ptr->next;
-          }
      }
      return (0);
 }
