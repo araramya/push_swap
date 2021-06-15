@@ -58,74 +58,46 @@ void sortmerge(int arr[], int l, int r)
         merge(arr, l, m, r);
     }
 }
-void printArray(int A[], int size)
+
+void big_sorting(t_node **a, t_node **b, int n)
 {
     int i;
-    for (i = 0; i < size; i++)
-        printf("%d ", A[i]);
-    printf("\n");
-}
-
-void big_sorting(t_node **a, t_node **b, int argc)
-{
-    // int midpoint;
-    // (void)b;
-    // int i;
-    // t_node *ptr;
-    // int temp_arr[argc-1];
-    // i = 0;
-    // ptr = *a;
-    // while(ptr != NULL)
-    // {
-    //     temp_arr[i] = ptr->data;
-    //     ptr = ptr->next;
-    //     i++;
-    // }
-    // //print_stack(*a); 
-    // sortmerge(temp_arr, 0, argc - 2 );
-    // midpoint = (temp_arr[(sizeof(temp_arr)/ sizeof(temp_arr[0])/2)]);
-    // printf("%d\n", midpoint);
-
-
-   // printf("kyanqs chist es grel\n");
-    //printArray(temp_arr, argc - 1);
-
-    int temp_arr[argc-1];
-    t_node *ptr;
-    int i;
-    int p;
+    int like_midpoint;
     int len;
     int index;
-    
+    int temp_arr[n];
+    t_node *ptr;
 
     i = 0;
-    len = 0;
     ptr = *a;
+    len = 0;
     index = 0;
     while(ptr != NULL)
     {
         temp_arr[i] = ptr->data;
-        ptr = ptr->next;
         i++;
+        ptr = ptr->next;
     }
-    sortmerge(temp_arr, 0, argc - 2);
-    p = temp_arr[(argc-1)/3];
+    sortmerge(temp_arr, 0, n-1);
+    like_midpoint = temp_arr[n/3];
     i = 0;
-    while (i < argc - 1)
+    while(i < n)
     {
-        if((*a)->data > p && getelem(*a, argc -2) < p)
-        {
+        if((*a)->data > like_midpoint && getelem(*a, stack_size(*a) - 1))
             rra(a);
-        }
-        else if ((*a)->data < p)
+        else if((*a)->data < like_midpoint)
         {
             pb(a,b);
-            if((*b)->data > (*b)->next->data && stack_size(*b) > 2)
-            sb(*b);
+            //if((*b)->data > (*b)->next->data && stack_size(*b) > 2)
+            //{
+            //    sb(*b);
+           // }
             len++;
         }
         else if(stack_size(*b) > 1 && (*b)->data < (*b)->next->data)
+        {
             rr(a,b);
+        }
         else 
             ra(a);
         i++;
@@ -133,31 +105,33 @@ void big_sorting(t_node **a, t_node **b, int argc)
     if(stack_size(*a) == 3)
         sort3(a);
     if(stack_size(*a) > 3)
-        big_sorting(a, b, ((argc - 1 )- len));
+        big_sorting(a, b, (n-len));
     while(stack_size(*b))
     {
         i = 0;
-        p = (*b)->data;
+        like_midpoint = (*b)->data;
         while(++i < stack_size(*b))
         {
-            if(getelem(*b, i) > p)
+            if(getelem(*b, i) > like_midpoint)
             {
-                p = getelem(*b, i);
-                index  = i;
+                like_midpoint = getelem(*b, i);
+                index = i;
             }
         }
-        if(index <= stack_size(*b)/2)
+        if(index <= stack_size(*b) / 2)
         {
             index++;
             while(--index)
-                rb(b);
-        }
-        else
             {
-                while(index++ < stack_size(*b))
-                    rrb(b);
+                rb(b);
             }
+        }
+        else{
+            while(index++ < stack_size((*b)))
+            {
+                rrb(b);
+            }
+        }
         pa(a,b);
     }
-
 }
