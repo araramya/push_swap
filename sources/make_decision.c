@@ -12,5 +12,5 @@ void choose_sort(t_node **a, t_node **b, int argc)
         sort5(a,b);
    else if (argc >= 7 && argc <= 501)
          big_sorting(a, b, argc-1);
-
+         
 }

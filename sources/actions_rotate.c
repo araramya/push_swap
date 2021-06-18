@@ -20,8 +20,12 @@ void rb(t_node **b)
 
 void rr(t_node **a, t_node **b)
 {
-    ra(a);
-    rb(b);
+    int temp;
+    temp = pop(a);
+    push_end(a, temp);
+    int temp1;
+    temp1 = pop(b);
+    push_end(b,temp1);
     count++;
     write(1, "rr\n", 3);
 }

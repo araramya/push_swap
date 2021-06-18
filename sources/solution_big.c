@@ -117,24 +117,37 @@ void big_sorting(t_node **a, t_node **b, int n)
    //printf("couynt %d\n", stack_size(*a));
     while (i < n)
     {
-        if((*a)->data > point && getelem(*a, stack_size(*a)-1) < point)
+        print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
+        if((*a)->data > point && getelem(*a, stack_size(*a) - 1) < point)
         {
             rra(a);
+            print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
         }
         else if ((*a)->data < point)
         {
             pb(a,b);
-            if(stack_size(*b) > 2)
+            print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
+            if(stack_size(*b) >= 2)
             { 
-                if((*b)->data > (*b)->next->data)       
-                sb(*b);
+                if((*b)->data < (*b)->next->data)
+                {       
+                    sb(*b);
+                    print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
+                }
             }
             len++;
+           // printf(" len = %d\n",len);
         }
         else if(stack_size(*b) > 1 && (*b)->data < (*b)->next->data)
+        {
             rr(a,b);
+            print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
+        }
         else 
+        {
             ra(a);
+            print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
+        }
         i++;
     }
     if(stack_size(*a) == 3)
@@ -157,14 +170,21 @@ void big_sorting(t_node **a, t_node **b, int n)
         {
             index++;
             while(--index)
+            {
                 rb(b);
+                print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
+            }
         }
         else
             {
                 while(index++ < stack_size(*b))
+                {
                     rrb(b);
+                    print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
+                }
             }
         pa(a,b);
+        print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
     }
 
 }
