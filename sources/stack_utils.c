@@ -169,10 +169,11 @@ int check_duplicates(t_node *a)
         {
             if(a->data == ptr->data)
                 return 1;
+            ptr = ptr->next;
         }
-        ptr = ptr->next;
+        a = a->next;
     }
-    return 0;
+    return (0);
 }
 
 void print_stack(t_node *node)

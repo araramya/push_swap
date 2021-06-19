@@ -4,7 +4,7 @@ SRCS = $(shell find "./sources" -name '*.c') push_swap.c
 OBJS = ${SRCS:.c=.o}
 CC = gcc
 RM = rm -f
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra #-Werror
 AR = ar csr
 
 .c.o :

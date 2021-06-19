@@ -21,6 +21,7 @@ int checking(char **argv, int n)
     }   
     return (0);
 }
+
 int main(int argc, char **argv)
 {
     count = 0;
@@ -40,7 +41,11 @@ int main(int argc, char **argv)
          push(&a, ft_atoi(argv[i - 1]));
          i--;
      }
-
+    if(check_duplicates(a))
+    {
+        write(1,"Error\n", 6);
+        return (0);
+    }
     print_stack(a); printf("\n"); print_stack(b); printf("\n\n");
     if(!stack_check(a))
         choose_sort(&a, &b, argc);

@@ -20,7 +20,7 @@ static int		ft_is_space(char c)
 	return (0);
 }
 
-int				ft_atoi(const char *str)
+long			ft_atoi(const char *str)
 {
 	int i;
 	int sign;
