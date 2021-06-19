@@ -68,28 +68,6 @@ void printArray(int A[], int size)
 
 void big_sorting(t_node **a, t_node **b, int n)
 {
-    // int midpoint;
-    // (void)b;
-    // int i;
-    // t_node *ptr;
-    // int temp_arr[argc-1];
-    // i = 0;
-    // ptr = *a;
-    // while(ptr != NULL)
-    // {
-    //     temp_arr[i] = ptr->data;
-    //     ptr = ptr->next;
-    //     i++;
-    // }
-    // //print_stack(*a); 
-    // sortmerge(temp_arr, 0, argc - 2 );
-    // midpoint = (temp_arr[(sizeof(temp_arr)/ sizeof(temp_arr[0])/2)]);
-    // printf("%d\n", midpoint);
-
-
-   // printf("kyanqs chist es grel\n");
-    //printArray(temp_arr, argc - 1);
-
     int temp_arr[n];
     t_node *ptr;
     int i;
@@ -111,50 +89,48 @@ void big_sorting(t_node **a, t_node **b, int n)
     sortmerge(temp_arr, 0, n-1);
     point = temp_arr[n/3];
     i = 0;
-    printf("point %d\n", point);
-    //printf("array[0] %d\n", (*a)->data);
-   //printf("a->array[count-1]%d\n", getelem(*a, stack_size(*a)-1) );
-   //printf("couynt %d\n", stack_size(*a));
     while (i < n)
     {
-        print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
+        //print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
         if((*a)->data > point && getelem(*a, stack_size(*a) - 1) < point)
         {
             rra(a);
-            print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
+          //  print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
         }
         else if ((*a)->data < point)
         {
             pb(a,b);
-            print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
+            //print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
             if(stack_size(*b) >= 2)
             { 
                 if((*b)->data < (*b)->next->data)
                 {       
                     sb(*b);
-                    print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
+              //      print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
                 }
             }
             len++;
-            printf(" len = %d\n",len);
+            //printf(" len = %d\n",len);
         }
         else if(stack_size(*b) > 1 && (*b)->data < (*b)->next->data)
         {
             rr(a,b);
-            print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
+           // print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
         }
         else 
         {
             ra(a);
-            print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
+            //print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
         }
         
         i++;
-        printf("i = %d\n n = %d\n", i, n);
+        //printf("i = %d\n n = %d\n", i, n);
     }
-    if(stack_size(*a) == 3)
-        sort3(a);
-    if(stack_size(*a) > 3)
+    if(stack_size(*a) == 5)
+        sort5(a,b);
+    //if(stack_size(*a) == 3)
+      //  sort3(a);
+    if(stack_size(*a) > 5)
         big_sorting(a, b, (n - len));
     while(stack_size(*b))
     {
@@ -174,7 +150,6 @@ void big_sorting(t_node **a, t_node **b, int n)
             while(--index)
             {
                 rb(b);
-                print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
             }
         }
         else
@@ -182,11 +157,9 @@ void big_sorting(t_node **a, t_node **b, int n)
                 while(index++ < stack_size(*b))
                 {
                     rrb(b);
-                  print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
                 }
             }
         pa(a,b);
-       print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
     }
 
 }

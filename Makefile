@@ -14,7 +14,7 @@ $(NAME) : ${OBJS}
 		$(MAKE) -C ./libft
 		cp $(LIBFT) ${NAME}
 		${AR} ${NAME} ${OBJS}
-		gcc $(NAME)
+		gcc $(NAME) 
 
 all : ${NAME}
 

@@ -27,7 +27,7 @@ int stack_check(t_node *node);
 int stack_min(t_node *node);
 int getelemindex(t_node *node, int num);
 void min_to_top(t_node **a);
-
+int check_duplicates(t_node *a);
 
 // actions
 void sa(t_node *a);//actions1

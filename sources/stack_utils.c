@@ -46,13 +46,6 @@ int pop(t_node **node)
     free(temp);
     return popped;
 }
-int peek(t_node* node)
-{
-    if(is_empty(node))
-        return 0;
-    return node->data;
-}
-
 int pop_end(t_node** node)
 {
     int popped;
@@ -63,7 +56,6 @@ int pop_end(t_node** node)
         free(node);
         return 0;
     }
-    //find the secon lasd node
     t_node *second_last = *node;
     while(second_last->next->next != NULL)
         second_last = second_last->next;
@@ -129,13 +121,10 @@ int stack_check(t_node *node)
        
         if(ptr->data > ptr->next->data)
         {
-           
             return 0;
-        }
-       
+        }  
         ptr = ptr->next;
     }
-  
     return 1;
 }
 int stack_min(t_node *node)
@@ -168,23 +157,23 @@ void min_to_top(t_node **a)
         while(index++ != stack_size(*a))
         rra(a);
     }
-    
-        // if(index <= 2)
-        // {
-        //     while(index-- > 0)
-        //         ra(a);
-        // }
-        // else if(index >= 3)
-        // {
-        //     if(stack_size(*a) == 4)
-        //         rra(a);
-        //     else
-        //     {            
-        //     while(index++ <= 4)
-        //         rra(a);
-        //     }
-        // }
 } 
+
+int check_duplicates(t_node *a)
+{
+
+    while(a->next != NULL)
+    {
+        t_node *ptr = a->next;
+        while(ptr != NULL)
+        {
+            if(a->data == ptr->data)
+                return 1;
+        }
+        ptr = ptr->next;
+    }
+    return 0;
+}
 
 void print_stack(t_node *node)
 {
