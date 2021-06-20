@@ -38,6 +38,6 @@ void ss(t_node *a, t_node *b)
     temp1 = b->data;
     b->data = b->next->data;
     b->next->data = temp1;
-    count++;
+   count++;
     write(1, "ss\n", 3);
 }

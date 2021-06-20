@@ -91,46 +91,35 @@ void big_sorting(t_node **a, t_node **b, int n)
     i = 0;
     while (i < n)
     {
-        //print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
         if((*a)->data > point && getelem(*a, stack_size(*a) - 1) < point)
         {
             rra(a);
-          //  print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
         }
         else if ((*a)->data < point)
         {
             pb(a,b);
-            //print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
             if(stack_size(*b) >= 2)
             { 
                 if((*b)->data < (*b)->next->data)
                 {       
                     sb(*b);
-              //      print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
                 }
             }
             len++;
-            //printf(" len = %d\n",len);
         }
         else if(stack_size(*b) > 1 && (*b)->data < (*b)->next->data)
         {
             rr(a,b);
-           // print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
         }
         else 
         {
             ra(a);
-            //print_stack(*a); printf("\n"); print_stack(*b); printf("\n\n");
-        }
-        
+        } 
         i++;
-        //printf("i = %d\n n = %d\n", i, n);
     }
-    if(stack_size(*a) == 5)
-        sort5(a,b);
-    //if(stack_size(*a) == 3)
-      //  sort3(a);
-    if(stack_size(*a) > 5)
+    if(stack_size(*a) == 3)
+        sort3(a);
+    if(stack_size(*a) > 3)
         big_sorting(a, b, (n - len));
     while(stack_size(*b))
     {

@@ -1,10 +1,10 @@
-NAME = pushswap.a
+NAME = pushs_swap.a
 LIBFT = ./libft/libft.a
 SRCS = $(shell find "./sources" -name '*.c') push_swap.c
 OBJS = ${SRCS:.c=.o}
 CC = gcc
 RM = rm -f
-CFLAGS = -Wall -Wextra #-Werror
+CFLAGS = -Wall -Wextra -Werror
 AR = ar csr
 
 .c.o :
@@ -14,7 +14,7 @@ $(NAME) : ${OBJS}
 		$(MAKE) -C ./libft
 		cp $(LIBFT) ${NAME}
 		${AR} ${NAME} ${OBJS}
-		gcc $(NAME) 
+		gcc $(NAME) -o push_swap
 
 all : ${NAME}
 

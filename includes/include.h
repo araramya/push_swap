@@ -12,8 +12,6 @@ typedef struct s_node
     struct s_node *next;
 }   t_node;
 
-
-//stack basic functions
 t_node *new_node(int data);
 int is_empty(t_node* stack);
 void push(t_node **stack, int data);
@@ -29,16 +27,15 @@ int getelemindex(t_node *node, int num);
 void min_to_top(t_node **a);
 int check_duplicates(t_node *a);
 
-// actions
-void sa(t_node *a);//actions1
+void sa(t_node *a);
 void sb(t_node *b);
-void ss(t_node  *a, t_node *b);//actions2
+void ss(t_node  *a, t_node *b);
 void pa(t_node **a, t_node **b );
 void pb(t_node **a, t_node **b);
-void ra(t_node **a);//actions 3
+void ra(t_node **a);
 void rb(t_node **b);
 void rr(t_node **a, t_node **b);
-void rra(t_node **a);//action 4
+void rra(t_node **a);
 void rrb(t_node **b);
 void rrr(t_node **a, t_node **b);
 

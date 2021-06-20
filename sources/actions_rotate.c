@@ -14,7 +14,7 @@ void rb(t_node **b)
     int temp;
     temp = pop(b);
     push_end(b,temp);
-    count++;
+   count++;
     write(1, "rb\n", 3);
 }
 
