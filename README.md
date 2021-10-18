@@ -111,4 +111,4 @@ while(i < n)
   Don't forget about checkings and leaks.
   
   GOOD LUCK !!!
-  Don't
+  Don't forget about checkings and leaks.
