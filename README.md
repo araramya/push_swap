@@ -112,3 +112,6 @@ while(i < n)
   
   GOOD LUCK !!!
   Don't forget about checkings and leaks.
+
+  
+  if you have questions you can write me. arsen.aramyan2001@gmail.com
