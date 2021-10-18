@@ -56,6 +56,7 @@ Let's start sorting. In case of 3 numbes you have just six possible options. So 
   5) I < III < II -> sa, ra
   6) II > I > III -> rra
   
+  
   after this you can sort 3 numbers maximum in 2 steps.
   
   
