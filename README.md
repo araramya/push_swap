@@ -78,30 +78,54 @@ Let's start sorting. In case of 3 numbes you have just six possible options. So 
   
   then i will use this pseudo code;
   len = 0;
-i = 0;
-while(i < n)
-{
-    if(a->top > point && aa->last < point)
-    rra;
-    elif(a->top < point)
+  
+    i = 0;
+  
+    while(i < n)
+              
     {
+              
+    if(a->top > point && aa->last < point)
+                                          
+    rra;
+                                          
+    elif(a->top < point)
+                        
+    {
+                        
         pb;
+                        
         if(sizeof(b) >= 2)
+  
             if(b->top < b->next->top)
+  
             sb;
+  
         len++;
+  
     }
+  
     elif(sizeof(b) > 1 && b->top < b->next->top < b->next->top)
+  
         rr;
+  
     else ra;
+  
     i++;
-} 
+  
+    } 
+  
   
   than check
+  
   if (sizeof(a) == 3)
+  
   sort_3
+  
   elif sizeof(a) > 3
+  
    BIG_SORTING(a,b,n_len) -> Recursion
+  
   
   now you need to sort b and push it to a;
   for that you need to find maximum of b and push it to a, and do it untill b is empty.
